@@ -1,0 +1,5 @@
+CREATE DATABASE users_db;
+CREATE DATABASE artists_db;
+CREATE DATABASE songs_db;
+CREATE DATABASE playlists_db;
+CREATE DATABASE history_db;
