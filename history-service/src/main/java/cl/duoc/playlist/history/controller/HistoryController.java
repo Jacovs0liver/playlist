@@ -23,7 +23,7 @@ public class HistoryController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<HistoryResponse> findById(@PathVariable Long id) {
+    public ResponseEntity<HistoryResponse> findById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(historyService.findById(id));
     }
 
@@ -34,8 +34,9 @@ public class HistoryController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
         historyService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }
+

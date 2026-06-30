@@ -23,7 +23,7 @@ public class SongController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<SongResponse> findById(@PathVariable Long id) {
+    public ResponseEntity<SongResponse> findById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(songService.findById(id));
     }
 
@@ -34,14 +34,17 @@ public class SongController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<SongResponse> update(@PathVariable Long id,
+    public ResponseEntity<SongResponse> update(
+            @PathVariable("id") Long id,
             @RequestBody SongRequest request) {
+
         return ResponseEntity.ok(songService.update(id, request));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
         songService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }
+

@@ -23,7 +23,7 @@ public class PlaylistController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PlaylistResponse> findById(@PathVariable Long id) {
+    public ResponseEntity<PlaylistResponse> findById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(playlistService.findById(id));
     }
 
@@ -35,15 +35,16 @@ public class PlaylistController {
 
     @PutMapping("/{id}")
     public ResponseEntity<PlaylistResponse> update(
-            @PathVariable Long id,
+            @PathVariable("id") Long id,
             @RequestBody PlaylistRequest request) {
 
         return ResponseEntity.ok(playlistService.update(id, request));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
         playlistService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }
+
