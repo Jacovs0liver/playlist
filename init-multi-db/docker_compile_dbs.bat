@@ -1,0 +1,11 @@
+docker exec -i postgres_rdbms psql -U postgres -d main_postgres_db < 00-create_dbs.sql
+docker exec -i postgres_rdbms psql -U postgres -d main_postgres_db < 01-usuarios.sql
+docker exec -i postgres_rdbms psql -U postgres -d main_postgres_db < 02-catalogo.sql
+docker exec -i postgres_rdbms psql -U postgres -d main_postgres_db < 03-recursos.sql
+docker exec -i postgres_rdbms psql -U postgres -d main_postgres_db < 04-prestamos.sql
+docker exec -i postgres_rdbms psql -U postgres -d main_postgres_db < 05-multas.sql
+docker exec -i postgres_rdbms psql -U postgres -d main_postgres_db < 06-reservas.sql
+docker exec -i postgres_rdbms psql -U postgres -d main_postgres_db < 07-busqueda.sql
+docker exec -i postgres_rdbms psql -U postgres -d main_postgres_db < 08-sedes.sql
+docker exec -i postgres_rdbms psql -U postgres -d main_postgres_db < 09-autores.sql
+docker exec -i postgres_rdbms psql -U postgres -d main_postgres_db < 10-categorias.sql
